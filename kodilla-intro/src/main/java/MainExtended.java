@@ -9,10 +9,10 @@ public class MainExtended {
         boolean goodCar = true;
 
         System.out.println(myCar);
-        System.out.println("Moja wersja samochodu " + version);
-        System.out.println("Moc samochodu ma " + horsePower + " Koni mechanicznych");
+        System.out.println("Wersja mojego samochodu " + version);
+        System.out.println("Moc samochodu wynosi " + horsePower + " Koni mechanicznych");
         System.out.println(exampleText);
         System.out.println(averageFuelConsumption + " litra");
-        System.out.println("Czy jest to dobry samochód " + goodCar);
+        System.out.println("Czy jest to dobry samochód: " + goodCar);
     }
 }
