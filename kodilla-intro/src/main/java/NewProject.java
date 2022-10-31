@@ -18,7 +18,7 @@ public class NewProject {
         ageCheck();
         name();
     }
-    public static String ageCheck(){
+    public static void ageCheck(){
         System.out.println("Podaj swój wiek");
         Scanner scanner = new Scanner(System.in);
         int age = scanner.nextInt();
@@ -28,23 +28,25 @@ public class NewProject {
         } else {
             System.out.println("Jesteś niepełnoletni / niepełnoletnia !");
         }
-        return result;
+        //return result;   nie potrzebne return bo nic nie zwracam przeciez
     }
     public static void name(){
         Scanner scanner = new Scanner(System.in);
         int size = 0;
+        //int j = 0;
         System.out.println("Podaj ile imion chcesz podać");
         size = scanner.nextInt();
+        //System.out.println("Podales "+size);
         String [] names = new String[size];
-
-        for (int i = 0; i <= names.length; i++){
-            System.out.println("Podaj imie");
+        //j = names.length;
+        //System.out.println(j);
+        System.out.println("Podaj imiona");
+        for (int i = 0; i < size; i++) {
             names[i] = scanner.nextLine();
         }
-
-        for (int i = 0; i <= names.length; i++){
-            System.out.println("Podałeś następujące imiona: " +names[i]);
+        for (int i = 0; i < size; i++) {
+            //for (String name : names){
+            System.out.println("Podałeś następujące imiona: " + names[i]);
         }
-
     }
 }
