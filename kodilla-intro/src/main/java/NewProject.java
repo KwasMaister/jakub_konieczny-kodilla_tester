@@ -22,7 +22,7 @@ public class NewProject {
         System.out.println("Podaj swój wiek");
         Scanner scanner = new Scanner(System.in);
         int age = scanner.nextInt();
-        String result = null;
+        //String result = null;
         if (age >= 18){
             System.out.println("Jesteś pełnoletni / pełnoletnia !");
         } else {
@@ -41,10 +41,11 @@ public class NewProject {
         //j = names.length;
         //System.out.println(j);
         System.out.println("Podaj imiona");
-        for (int i = 0; i < size; i++) {
+        scanner.nextLine();
+        for (int i = 0; i < names.length; i++) {
             names[i] = scanner.nextLine();
         }
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < names.length; i++) {
             //for (String name : names){
             System.out.println("Podałeś następujące imiona: " + names[i]);
         }
