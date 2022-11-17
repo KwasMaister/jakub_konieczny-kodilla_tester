@@ -1,18 +1,15 @@
-
-
 public class Book {
     private static String author;
     private static String title;
 
-    public static String of (String author, String title){
+    public static Book of (String author, String title){
         Book.author = author;
         Book.title = title;
-        return author + title;
+        return new Book();
     }
 
     public static void main (String [] args){
-        Book.of("Kuba", "Przez swiat");
+       Book book = Book.of("Kuba", "Przez swiat");
         System.out.println("Ksiązka " + author + " " + title);
     }
-
 }
