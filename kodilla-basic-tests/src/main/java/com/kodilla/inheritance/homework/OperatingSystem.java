@@ -15,7 +15,11 @@ public class OperatingSystem {
         System.out.println("Turn off: Operating System");
     }
 
-    public void getYearOfProduction() {
+    public int getYearOfProduction(){
+       return yearOfProduction;
+    }
+
+    public void displayGetYearOfProduction() {
         System.out.println("Class OperatingSystem -> Metoda: getYearOfProduction: " + yearOfProduction);
     }
 }

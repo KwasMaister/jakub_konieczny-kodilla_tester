@@ -10,12 +10,14 @@ public class Application {
         OperatingSystemFirstInheritance operatingSystemFirstInheritance = new OperatingSystemFirstInheritance(1950);
         operatingSystemFirstInheritance.turnOn();
         operatingSystemFirstInheritance.turnOff();
+        operatingSystemFirstInheritance.displayGetYearOfProduction();
         System.out.println(" ");
 
         OperatingSystemSecondInheritance operatingSystemSecondInheritance = new OperatingSystemSecondInheritance(2000);
         operatingSystemSecondInheritance.turnOn();
         operatingSystemSecondInheritance.turnOff();
-        operatingSystemSecondInheritance.getYearOfProduction();
+        operatingSystemSecondInheritance.displayGetYearOfProduction();
         System.out.println(" ");
+
     }
 }
