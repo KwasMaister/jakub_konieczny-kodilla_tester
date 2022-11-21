@@ -2,13 +2,13 @@ package com.kodilla.basic_assertion;
 
 public class Application {
     public static void main(String[] args) {
-
+/*
         Calculator calculator = new Calculator();
         int a = 5;
         int b = 8;
         double c = 5;
         double d = 4;
-        int sumResult = calculator.sum(a,b);
+        int sumResult = calculator.sum(a, b);
         boolean correct = ResultChecker.assertEquals(13, sumResult);
 
         if (correct) {
@@ -17,10 +17,10 @@ public class Application {
             System.out.println("Metoda sum nie działa poprawnie dla liczb " + a + " i " + b);
         }
 
-        int subtractResult = calculator.subtract(a,b);
+        int subtractResult = calculator.subtract(a, b);
         boolean correctSubtract = ResultChecker.assertEquals(-3, subtractResult);
 
-        if (correctSubtract){
+        if (correctSubtract) {
             System.out.println("Metoda subtract dziala poprawnie dla liczb " + a + " i " + b);
         } else {
             System.out.println("Metoda subtract nie działa poprawnie dla liczb " + a + " i " + b);
@@ -35,4 +35,8 @@ public class Application {
             System.out.println("Metoda potęga nie dziala poprawnie dla liczby:  " + c);
         }
     }
-}
+
+ */
+    }
+
+    }
