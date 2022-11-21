@@ -6,6 +6,8 @@ public class Application {
         Calculator calculator = new Calculator();
         int a = 5;
         int b = 8;
+        double c = 5;
+        double d = 4;
         int sumResult = calculator.sum(a,b);
         boolean correct = ResultChecker.assertEquals(13, sumResult);
 
@@ -24,13 +26,13 @@ public class Application {
             System.out.println("Metoda subtract nie działa poprawnie dla liczb " + a + " i " + b);
         }
 
-        int potegaresult = calculator.potega(a);
-        boolean correctPotega = ResultChecker.assertEquals(24, potegaresult);
+        double potegaresult = calculator.potega(c,d);
+        boolean correctPotega = ResultChecker.wynikPotegi(625, potegaresult);
 
         if (correctPotega){
-            System.out.println("Metoda potega dziala poprawnie dla liczby: " + a);
+            System.out.println("Metoda potega dziala poprawnie dla liczby: " + c);
         } else {
-            System.out.println("Metoda potęga nie dziala poprawnie dla liczby:  " + a);
+            System.out.println("Metoda potęga nie dziala poprawnie dla liczby:  " + c);
         }
     }
 }
