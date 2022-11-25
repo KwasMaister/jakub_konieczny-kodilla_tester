@@ -2,26 +2,20 @@ package com.kodilla.abstracts.homework;
 
 public class JobApplication {
     public static void main(String[] args) {
-        Person andrzej = new Person("Andrzej ", 20, "Mechanik");
+        Person andrzej = new Person("Andrzej ", 20, new CarMechanick()); //wywolanie obiektu CarMechanick
         andrzej.show();
-        CarMechanick carMechanick = new CarMechanick(2000);
-        System.out.println("Zarabia: " + carMechanick.getSalary());
-        carMechanick.responsibilities();
-        System.out.println(" ");
+        andrzej.responsibilities();
+        andrzej.salary();
 
-        Person mikolaj = new Person("Mikolaj ", 30, "Dziennikarz");
+        Person mikolaj = new Person("Mikolaj ", 30, new Doctor());
         mikolaj.show();
-        Journalist journalist  = new Journalist(3000);
-        System.out.println("Zarabia: " + journalist.getSalary());
-        journalist.responsibilities();
-        System.out.println(" ");
+        mikolaj.responsibilities();
+        mikolaj.salary();
 
-        Person basia = new Person("Basia ", 40, "Doktor");
+        Person basia = new Person("Basia ", 40, new Journalist());
         basia.show();
-        Doctor doctor  = new Doctor(4000);
-        System.out.println("Zarabia: " + doctor.getSalary());
-        doctor.responsibilities();
-        System.out.println(" ");
+        basia.responsibilities();
+        basia.salary();
 
     }
 }

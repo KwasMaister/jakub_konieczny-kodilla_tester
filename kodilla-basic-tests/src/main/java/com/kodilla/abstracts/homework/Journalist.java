@@ -1,17 +1,13 @@
 package com.kodilla.abstracts.homework;
 
 public class Journalist extends Job{
-    public Journalist (int salary){
-        super(salary);
+    @Override
+    public String responsibilities() {
+        return "Przeprowadzac wywiady";
     }
 
     @Override
-    public void salary() {
-        System.out.println("Zarabia: " + getSalary());
-    }
-
-    @Override
-    public void responsibilities() {
-        System.out.println("Obowiązek: Przeprowadzac wywiady");
+    public int salary(){
+        return 2000;
     }
 }
