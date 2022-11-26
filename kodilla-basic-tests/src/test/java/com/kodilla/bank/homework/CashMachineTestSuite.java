@@ -15,7 +15,7 @@ public class CashMachineTestSuite {
     }
 
     @Test
-    public void addThreeTransactions(){
+    public void dokonanieTrzechWplat(){
         CashMachine cashMachine = new CashMachine();
         cashMachine.depositMoneyAndCashOut(100);
         cashMachine.depositMoneyAndCashOut(200);
@@ -29,7 +29,7 @@ public class CashMachineTestSuite {
     }
 
     @Test
-    public void cashOutTwoTransactions(){
+    public void dokonanieDwochwyplat(){
         CashMachine cashMachine = new CashMachine();
         cashMachine.depositMoneyAndCashOut(-100);
         cashMachine.depositMoneyAndCashOut(-333);
@@ -42,61 +42,139 @@ public class CashMachineTestSuite {
     }
 
     @Test
-    public void numberOfTransactionsDoingTwoTransactions(){
-        CashMachine cashMachine = new CashMachine();
-        cashMachine.depositMoneyAndCashOut(444);
-        cashMachine.depositMoneyAndCashOut(-222);
-
-        int[] values = cashMachine.getValues(); // nie do konca jestem przekonany dlaczego to tutaj musi byc
-
-        cashMachine.numberOfOperations();
-        assertEquals(2, values.length);
-    }
-
-    @Test
-    public void numberOfTransactionsNothing(){
-        CashMachine cashMachine = new CashMachine();
-
-        int[] values = cashMachine.getValues(); // nie do konca jestem przekonany dlaczego to tutaj musi byc
-
-        cashMachine.numberOfOperations();
-        assertEquals(0, values.length);
-    }
-
-    @Test
-    public void balanceAccountOnlyDepositMoney(){
+    public void sumaTrzechWplat(){
         CashMachine cashMachine = new CashMachine();
         cashMachine.depositMoneyAndCashOut(100);
         cashMachine.depositMoneyAndCashOut(200);
         cashMachine.depositMoneyAndCashOut(500);
+        cashMachine.depositMoneyAndCashOut(-666);
 
-        cashMachine.balance();
+       // cashMachine.balance();
 
         assertEquals(800, cashMachine.balance());
     }
 
     @Test
-    public void balanceAccountOnlyCashOutMoney(){
+    public void sredniaWartoscWplat(){
         CashMachine cashMachine = new CashMachine();
-        cashMachine.depositMoneyAndCashOut(-200);
-        cashMachine.depositMoneyAndCashOut(-400);
-        cashMachine.depositMoneyAndCashOut(-600);
+        cashMachine.depositMoneyAndCashOut(100);
+        cashMachine.depositMoneyAndCashOut(200);
+        cashMachine.depositMoneyAndCashOut(500);
+        cashMachine.depositMoneyAndCashOut(-5321300);
 
-        cashMachine.balance();
+        //cashMachine.averageBalance();
 
-        assertEquals(-1200, cashMachine.balance());
+        assertEquals(266.6, cashMachine.averageBalance(), 0.1);
     }
 
     @Test
-    public void balanceAccountDepositMoneyAndCashOutMoney(){
+    public void sredniaWartoscWyplat(){
+        CashMachine cashMachine = new CashMachine();
+        cashMachine.depositMoneyAndCashOut(-55);
+        cashMachine.depositMoneyAndCashOut(-139);
+        cashMachine.depositMoneyAndCashOut(-200);
+        cashMachine.depositMoneyAndCashOut(199900);
+
+       // cashMachine.averageSubtract();
+
+        assertEquals(-131.3, cashMachine.averageSubtract(), 0.1);
+    }
+    @Test
+    public void sumaDwochWyplat(){
         CashMachine cashMachine = new CashMachine();
         cashMachine.depositMoneyAndCashOut(-200);
+        cashMachine.depositMoneyAndCashOut(-400);
+        cashMachine.depositMoneyAndCashOut(600);
+
+       // cashMachine.subtract();
+
+        assertEquals(-600, cashMachine.subtract());
+    }
+
+    @Test
+    public void sumaDwochWplatIDwochWyplat(){
+        CashMachine cashMachine = new CashMachine();
+        cashMachine.depositMoneyAndCashOut(100);
+        cashMachine.depositMoneyAndCashOut(555);
+        cashMachine.depositMoneyAndCashOut(-333);
+        cashMachine.depositMoneyAndCashOut(-10);
+
+        //cashMachine.sumBalanceAndSubtract();
+
+        assertEquals(312, cashMachine.sumBalanceAndSubtract());
+    }
+
+    @Test
+    public void zeroWplatOrazWyplat(){
+        CashMachine cashMachine = new CashMachine();
+
+        //cashMachine.numberOfOperations();
+
+        assertEquals(0, cashMachine.numberOfOperations());
+    }
+    @Test
+    public void LiczbaTransakcjiJednaWplata(){
+        CashMachine cashMachine = new CashMachine();
+
         cashMachine.depositMoneyAndCashOut(1000);
-        cashMachine.depositMoneyAndCashOut(20);
 
-        cashMachine.balance();
+        assertEquals(1,cashMachine.numberOfOperations());
+    }
 
-        assertEquals(820, cashMachine.balance());
+    @Test
+    public void LiczbaTransakcjiJednaWyplata(){
+        CashMachine cashMachine = new CashMachine();
+
+        cashMachine.depositMoneyAndCashOut(-100);
+
+        assertEquals(1,cashMachine.numberOfOperations());
+    }
+    @Test
+    public void LiczbaTransakcjiJednaWplataJednaWyplata(){
+        CashMachine cashMachine = new CashMachine();
+
+        cashMachine.depositMoneyAndCashOut(1000);
+        cashMachine.depositMoneyAndCashOut(-500);
+
+        assertEquals(2,cashMachine.numberOfOperations());
+    }
+
+    @Test
+    public void LiczbaTransakcjiPiecWplatTrzyWyplat(){
+        CashMachine cashMachine = new CashMachine();
+
+        cashMachine.depositMoneyAndCashOut(1000);
+        cashMachine.depositMoneyAndCashOut(1000);
+        cashMachine.depositMoneyAndCashOut(1000);
+        cashMachine.depositMoneyAndCashOut(1000);
+        cashMachine.depositMoneyAndCashOut(1000);
+        cashMachine.depositMoneyAndCashOut(-500);
+        cashMachine.depositMoneyAndCashOut(-500);
+        cashMachine.depositMoneyAndCashOut(-500);
+
+        assertEquals(8,cashMachine.numberOfOperations());
+    }
+
+    @Test
+    public void liczbaTransakcjiZwiazanychZWplata(){
+        CashMachine cashMachine = new CashMachine();
+
+        cashMachine.depositMoneyAndCashOut(500);
+        cashMachine.depositMoneyAndCashOut(1500);
+        cashMachine.depositMoneyAndCashOut(-1500);
+
+        assertEquals(2, cashMachine.numberOfOperationsOnlyDeposit());
+    }
+
+    @Test
+    public void liczbaTransakcjiZwiazanychZWyplata(){
+        CashMachine cashMachine = new CashMachine();
+
+        cashMachine.depositMoneyAndCashOut(-1000);
+        cashMachine.depositMoneyAndCashOut(10);
+        cashMachine.depositMoneyAndCashOut(-300);
+
+        assertEquals(2, cashMachine.numberOfOperationsOnlyCashOut());
     }
 
 }
