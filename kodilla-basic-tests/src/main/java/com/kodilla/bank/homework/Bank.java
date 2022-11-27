@@ -32,53 +32,67 @@ public class Bank {
     }
 
     public int totalBalance(){
+        int x = 0;
         for (CashMachine machine : this.machine) { // for each --> for(Typ_Obiektu nazwa_obiektu : nazwa_tablicy){ ... }
             this.totalBalance = machine.balance();
+            x += machine.balance();
         }
-        return totalBalance;
+        return x;
     }
 
     public int totalSubtract(){
+        int x = 0;
         for (CashMachine machine : this.machine) {
             this.totalSubtract = machine.subtract();
+            x += machine.subtract();
         }
-        return totalSubtract;
+        return x;
 
     }
 
     public int totalSumBalanceAndSubtract () {
+        int x = 0;
         for (CashMachine machine : this.machine){
             this.totalSumBalanceAndSubtract = machine.sumBalanceAndSubtract();
+            x += machine.sumBalanceAndSubtract();
         }
-        return this.totalSumBalanceAndSubtract;
+        return x;
     }
 
    public int numberOfOperationsOnlyCashOut (){
+        int x = 0;
         for (CashMachine machine : this.machine){
             this.numberOfOperationsOnlyCashOut = machine.numberOfOperationsOnlyCashOut();
+            x += machine.numberOfOperationsOnlyCashOut();
         }
-        return this.numberOfOperationsOnlyCashOut;
+        return x;
    }
 
    public int numberOfOperationsOnlyDeposit (){
+        int x = 0;
         for (CashMachine machine : this.machine){
             this.numberOfOperationsOnlyDeposit = machine.numberOfOperationsOnlyDeposit();
+            x += machine.numberOfOperationsOnlyDeposit();
         }
-        return this.numberOfOperationsOnlyDeposit;
+        return x;
    }
 
    public double averageBalance (){
+        double x = 0;
         for (CashMachine machine : this.machine){
             this.averageBalance = machine.averageBalance();
+            x += machine.averageBalance();
         }
-        return averageBalance;
+        return x / this.machine.length;
    }
 
    public double averageSubtract (){
+        double x = 0;
         for (CashMachine machine : this.machine){
             this.averageSubtract = machine.averageSubtract();
+            x += machine.averageSubtract();
         }
-        return averageSubtract;
+        return x / this.machine.length;
    }
 
 

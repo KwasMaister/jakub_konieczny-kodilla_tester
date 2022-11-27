@@ -39,9 +39,9 @@ public class BankTestSuite {
 
     @Test
     public void sumaDokonanychWplatDwochBankomatow(){
-        int sumCashMachineOne;
-        int sumCashMachineTwo;
-        int sum;
+       // int sumCashMachineOne;
+      //  int sumCashMachineTwo;
+       // int sum;
         Bank bank = new Bank();
         CashMachine cashMachineOne = new CashMachine();
         CashMachine cashMachineTwo = new CashMachine();
@@ -50,24 +50,24 @@ public class BankTestSuite {
         cashMachineOne.depositMoneyAndCashOut(200);
         cashMachineOne.depositMoneyAndCashOut(400);
         cashMachineOne.depositMoneyAndCashOut(-1400);
-        sumCashMachineOne = bank.totalBalance();
+       // sumCashMachineOne = bank.totalBalance();
 
         bank.addMachine(cashMachineTwo);
         cashMachineTwo.depositMoneyAndCashOut(1000);
         cashMachineTwo.depositMoneyAndCashOut(4000);
         cashMachineTwo.depositMoneyAndCashOut(-40200);
-        sumCashMachineTwo = bank.totalBalance();
+       // sumCashMachineTwo = bank.totalBalance();
 
-         sum = sumCashMachineOne + sumCashMachineTwo;
+        // sum = sumCashMachineOne + sumCashMachineTwo;
 
 
-        assertEquals(5600, sum);
+        assertEquals(5600, bank.totalBalance());
     }
     @Test
     public void sumaDokonanychWyplatDwochBankomatow(){
-        int sumCashMachineOne;
-        int sumCashMachineTwo;
-        int sum;
+       // int sumCashMachineOne;
+       // int sumCashMachineTwo;
+       // int sum;
         Bank bank = new Bank();
         CashMachine cashMachineOne = new CashMachine();
         CashMachine cashMachineTwo = new CashMachine();
@@ -77,49 +77,49 @@ public class BankTestSuite {
         cashMachineOne.depositMoneyAndCashOut(400);
         cashMachineOne.depositMoneyAndCashOut(-1400);
         cashMachineOne.depositMoneyAndCashOut(-2400);
-        sumCashMachineOne = bank.totalSubtract();
+       // sumCashMachineOne = bank.totalSubtract();
 
         bank.addMachine(cashMachineTwo);
         cashMachineTwo.depositMoneyAndCashOut(1000);
         cashMachineTwo.depositMoneyAndCashOut(4000);
         cashMachineTwo.depositMoneyAndCashOut(-40200);
-        sumCashMachineTwo = bank.totalSubtract();
+       // sumCashMachineTwo = bank.totalSubtract();
 
-        sum = sumCashMachineOne + sumCashMachineTwo;
+       // sum = sumCashMachineOne + sumCashMachineTwo;
 
 
-        assertEquals(-38400, sum);
+        assertEquals(-44000, bank.totalSubtract());
     }
 
     @Test
     public void calkowityBilansZeWszystkichBankomatow(){
         Bank bank = new Bank();
-        int sumCashMachineOne;
-        int sumCashMachineTwo;
-        int sum;
+       // int sumCashMachineOne;
+       // int sumCashMachineTwo;
+       // int sum;
         CashMachine cashMachineOne = new CashMachine();
         CashMachine cashMachineTwo = new CashMachine();
 
         bank.addMachine(cashMachineOne);
         cashMachineOne.depositMoneyAndCashOut(-1000);
         cashMachineOne.depositMoneyAndCashOut(333);
-        sumCashMachineOne = bank.totalSumBalanceAndSubtract();
+        //sumCashMachineOne = bank.totalSumBalanceAndSubtract();
 
         bank.addMachine(cashMachineTwo);
         cashMachineTwo.depositMoneyAndCashOut(-5);
         cashMachineTwo.depositMoneyAndCashOut(500);
-        sumCashMachineTwo = bank.totalSumBalanceAndSubtract();
+       // sumCashMachineTwo = bank.totalSumBalanceAndSubtract();
 
-        sum = sumCashMachineOne + sumCashMachineTwo;
-        assertEquals(-172, sum);
+        //sum = sumCashMachineOne + sumCashMachineTwo;
+        assertEquals(-172, bank.totalSumBalanceAndSubtract());
     }
 
     @Test
     public void liczbaTransakcjiZwiazanychZWyplata(){
         Bank bank = new Bank();
-        int sumCashMachineOne;
-        int sumCashMachineTwo;
-        int sum;
+       // int sumCashMachineOne;
+        //int sumCashMachineTwo;
+        //int sum;
         CashMachine cashMachineOne = new CashMachine();
         CashMachine cashMachineTwo = new CashMachine();
 
@@ -127,24 +127,24 @@ public class BankTestSuite {
         cashMachineOne.depositMoneyAndCashOut(-1000);
         cashMachineOne.depositMoneyAndCashOut(-2000);
         cashMachineOne.depositMoneyAndCashOut(6000);
-        sumCashMachineOne = bank.numberOfOperationsOnlyCashOut();
+        //sumCashMachineOne = bank.numberOfOperationsOnlyCashOut();
 
         bank.addMachine(cashMachineTwo);
         cashMachineTwo.depositMoneyAndCashOut(-5);
         cashMachineTwo.depositMoneyAndCashOut(1500);
         cashMachineTwo.depositMoneyAndCashOut(500);
-        sumCashMachineTwo = bank.numberOfOperationsOnlyCashOut();
-        sum = sumCashMachineOne + sumCashMachineTwo;
+        //sumCashMachineTwo = bank.numberOfOperationsOnlyCashOut();
+       // sum = sumCashMachineOne + sumCashMachineTwo;
 
-        assertEquals(3, sum);
+        assertEquals(3, bank.numberOfOperationsOnlyCashOut());
     }
 
     @Test
     public void liczbaTranskacjiZwiazanychzWplata(){
         Bank bank = new Bank();
-        int sumCashMachineOne;
-        int sumCashMachineTwo;
-        int sum;
+       // int sumCashMachineOne;
+        //int sumCashMachineTwo;
+       // int sum;
         CashMachine cashMachineOne = new CashMachine();
         CashMachine cashMachineTwo = new CashMachine();
 
@@ -152,24 +152,24 @@ public class BankTestSuite {
         cashMachineOne.depositMoneyAndCashOut(1000);
         cashMachineOne.depositMoneyAndCashOut(2000);
         cashMachineOne.depositMoneyAndCashOut(-2000);
-        sumCashMachineOne = bank.numberOfOperationsOnlyDeposit();
+       // sumCashMachineOne = bank.numberOfOperationsOnlyDeposit();
 
         bank.addMachine(cashMachineTwo);
         cashMachineTwo.depositMoneyAndCashOut(-5);
         cashMachineTwo.depositMoneyAndCashOut(500);
         cashMachineTwo.depositMoneyAndCashOut(500);
-        sumCashMachineTwo = bank.numberOfOperationsOnlyDeposit();
+        //sumCashMachineTwo = bank.numberOfOperationsOnlyDeposit();
 
-        sum = sumCashMachineOne + sumCashMachineTwo;
-        assertEquals(4, sum);
+       // sum = sumCashMachineOne + sumCashMachineTwo;
+        assertEquals(4, bank.numberOfOperationsOnlyDeposit());
 
     }
     @Test
     public void sredniaWartoscWyplaty(){
         Bank bank = new Bank();
-        double averageCashMachineOne;
-        double averageCashMachinetwo;
-        double average;
+        //double averageCashMachineOne;
+       // double averageCashMachinetwo;
+        //double average;
         CashMachine cashMachineOne = new CashMachine();
         CashMachine cashMachineTwo = new CashMachine();
 
@@ -178,25 +178,25 @@ public class BankTestSuite {
         cashMachineOne.depositMoneyAndCashOut(-2000);
         cashMachineOne.depositMoneyAndCashOut(2000);
         cashMachineOne.depositMoneyAndCashOut(-163);
-        averageCashMachineOne = bank.totalSubtract();
+        //averageCashMachineOne = bank.totalSubtract();
 
         bank.addMachine(cashMachineTwo);
         cashMachineTwo.depositMoneyAndCashOut(-5);
         cashMachineTwo.depositMoneyAndCashOut(1500);
         cashMachineTwo.depositMoneyAndCashOut(500);
         cashMachineTwo.depositMoneyAndCashOut(-598);
-        averageCashMachinetwo = bank.totalSubtract();
+       // averageCashMachinetwo = bank.totalSubtract();
 
-        average = (averageCashMachineOne + averageCashMachinetwo) / 4;
-        assertEquals(-691.5, average, 0.01);
+       // average = (averageCashMachineOne + averageCashMachinetwo) / 4;
+        assertEquals(-691.5, bank.averageSubtract(), 0.01);
     }
 
     @Test
     public void sredniaWartoscWplaty(){
         Bank bank = new Bank();
-        double averageCashMachineOne;
-        double averageCashMachinetwo;
-        double average;
+        //double averageCashMachineOne;
+        //double averageCashMachinetwo;
+        //double average;
         CashMachine cashMachineOne = new CashMachine();
         CashMachine cashMachineTwo = new CashMachine();
 
@@ -204,15 +204,15 @@ public class BankTestSuite {
         cashMachineOne.depositMoneyAndCashOut(1000);
         cashMachineOne.depositMoneyAndCashOut(2000);
         cashMachineOne.depositMoneyAndCashOut(-333);
-        averageCashMachineOne = bank.totalBalance();
+        //averageCashMachineOne = bank.totalBalance();
 
         bank.addMachine(cashMachineTwo);
         cashMachineTwo.depositMoneyAndCashOut(-5);
         cashMachineTwo.depositMoneyAndCashOut(500);
         cashMachineTwo.depositMoneyAndCashOut(20);
-        averageCashMachinetwo = bank.totalBalance();
+        //averageCashMachinetwo = bank.totalBalance();
 
-        average = (averageCashMachineOne + averageCashMachinetwo) / 4;
-        assertEquals(880, average, 0.01);
+        //average = (averageCashMachineOne + averageCashMachinetwo) / 4;
+        assertEquals(880, bank.averageBalance(), 0.01);
     }
 }
