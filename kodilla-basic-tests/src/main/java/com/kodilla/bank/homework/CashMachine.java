@@ -29,7 +29,7 @@ public class CashMachine {
             return 0;
         }
         for (int i = 0; i < this.values.length; i++){
-            if (this.values[i] >= 0){
+            if (this.values[i] > 0){
                 sumBalance = sumBalance + this.values[i];
             }
         }
@@ -44,7 +44,7 @@ public class CashMachine {
             return 0;
         }
         for (int i = 0; i < this.values.length; i++){
-            if (this.values[i] >= 0){
+            if (this.values[i] > 0){
                 sumBalance = sumBalance + this.values[i];
                 x++;
             }
@@ -60,7 +60,7 @@ public class CashMachine {
             return 0;
         }
         for (int i = 0; i < this.values.length; i++){
-            if (this.values[i] <= 0){
+            if (this.values[i] < 0){
             subtract = subtract + this.values[i];
             }
         }
@@ -75,7 +75,7 @@ public class CashMachine {
             return 0;
         }
         for (int i = 0; i < this.values.length; i++){
-            if (this.values[i] <= 0) {
+            if (this.values[i] < 0) {
                 subtract = subtract + this.values[i];
                 x++;
             }
