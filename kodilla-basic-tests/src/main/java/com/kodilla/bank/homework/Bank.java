@@ -3,16 +3,6 @@ package com.kodilla.bank.homework;
 public class Bank {
     private int numberOfMachines;
     private CashMachine [] machine;
-    private int totalBalance = 0;
-    private int totalSubtract = 0;
-    private int totalSumBalanceAndSubtract = 0;
-    private int numberOfOperationsOnlyCashOut = 0;
-    private int numberOfOperationsOnlyDeposit = 0;
-
-    private double averageBalance = 0;
-    private double averageSubtract = 0;
-
-
 
     public Bank(){
         this.numberOfMachines = 0;
@@ -34,7 +24,6 @@ public class Bank {
     public int totalBalance(){
         int x = 0;
         for (CashMachine machine : this.machine) { // for each --> for(Typ_Obiektu nazwa_obiektu : nazwa_tablicy){ ... }
-            this.totalBalance = machine.balance();
             x += machine.balance();
         }
         return x;
@@ -43,7 +32,6 @@ public class Bank {
     public int totalSubtract(){
         int x = 0;
         for (CashMachine machine : this.machine) {
-            this.totalSubtract = machine.subtract();
             x += machine.subtract();
         }
         return x;
@@ -53,7 +41,6 @@ public class Bank {
     public int totalSumBalanceAndSubtract () {
         int x = 0;
         for (CashMachine machine : this.machine){
-            this.totalSumBalanceAndSubtract = machine.sumBalanceAndSubtract();
             x += machine.sumBalanceAndSubtract();
         }
         return x;
@@ -62,7 +49,6 @@ public class Bank {
    public int numberOfOperationsOnlyCashOut (){
         int x = 0;
         for (CashMachine machine : this.machine){
-            this.numberOfOperationsOnlyCashOut = machine.numberOfOperationsOnlyCashOut();
             x += machine.numberOfOperationsOnlyCashOut();
         }
         return x;
@@ -71,7 +57,6 @@ public class Bank {
    public int numberOfOperationsOnlyDeposit (){
         int x = 0;
         for (CashMachine machine : this.machine){
-            this.numberOfOperationsOnlyDeposit = machine.numberOfOperationsOnlyDeposit();
             x += machine.numberOfOperationsOnlyDeposit();
         }
         return x;
@@ -80,19 +65,18 @@ public class Bank {
    public double averageBalance (){
         double x = 0;
         for (CashMachine machine : this.machine){
-            this.averageBalance = machine.averageBalance();
-            x += machine.averageBalance();
+            x += machine.balance();
         }
-        return x / this.machine.length;
+
+       return x / numberOfOperationsOnlyDeposit();
    }
 
    public double averageSubtract (){
         double x = 0;
         for (CashMachine machine : this.machine){
-            this.averageSubtract = machine.averageSubtract();
-            x += machine.averageSubtract();
+            x += machine.subtract();
         }
-        return x / this.machine.length;
+        return x / numberOfOperationsOnlyCashOut();
    }
 
 
