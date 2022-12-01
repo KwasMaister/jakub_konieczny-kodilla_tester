@@ -22,7 +22,7 @@ public class Car {
     }
 
     public int getSeats(){  //gettery
-        return seats;
+       return seats;
     }
 
     public void displayNumberOfSeats(){   //metoda

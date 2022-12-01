@@ -7,6 +7,8 @@ public class Application {
         car.turnOnLights(); //użycie metody turnOnLights
 
         Convertible convertible = new Convertible(4,2); //obiekt convertible
+        //convertible.turnOnLights();
+        //System.out.println(convertible.getSeats());
         convertible.displayNumberOfSeats();
         //System.out.println(convertible.getSeats());
     }

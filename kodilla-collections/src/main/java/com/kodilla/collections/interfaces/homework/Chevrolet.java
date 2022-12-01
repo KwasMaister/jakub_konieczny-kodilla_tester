@@ -12,10 +12,7 @@ public class Chevrolet implements Car {
         this.decreaseSpeed = decreaseSpeed;
     }
 
-    @Override
-    public int getSpeed() {
-        return speed;
-    }
+
 
     @Override
     public void increaseSpeed() {
@@ -25,5 +22,9 @@ public class Chevrolet implements Car {
     @Override
     public void decreaseSpeed() {
         speed = speed - decreaseSpeed;
+    }
+    @Override
+    public int getSpeed() {
+        return speed;
     }
 }
