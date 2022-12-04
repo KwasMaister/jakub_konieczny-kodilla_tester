@@ -19,7 +19,7 @@ public class Grades {
 
     public int[] getValues(){    //tutaj chodzi tylko o to, ze pozwalamy wykorzystac prywatna zmienna values ??? czyli zwracamy zawartosc tablicy values
         return values;
-    }
+    } // zwraca tablice z linii 4. Metoda nigdy nie ma dostepu do innej metody
 
     public double getAverage() {
         if (this.values.length == 0) {

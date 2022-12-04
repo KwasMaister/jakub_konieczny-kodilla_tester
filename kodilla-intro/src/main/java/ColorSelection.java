@@ -7,13 +7,13 @@ public class ColorSelection {
         String firstLetter = ColorDialogs.getFirstLetter();
         switch (firstLetter){
             case "r" :
-                System.out.println("RED");
+                System.out.println(colors.BLUE);
                 break;
             case "g" :
-                System.out.println("GREEN");
+                System.out.println(colors.GREEN);
                 break;
             case "b":
-                System.out.println("BLUE");
+                System.out.println(colors.RED.name());
                 break;
         }
     }

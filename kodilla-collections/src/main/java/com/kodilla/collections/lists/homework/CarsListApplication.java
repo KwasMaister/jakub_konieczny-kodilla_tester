@@ -11,7 +11,7 @@ import java.util.List;
 
 public class CarsListApplication {
     public static void main(String[] args) {
-        List<Car> cars = new ArrayList<>();
+        List<Car> cars = new ArrayList<>();  //przypisanie do zmiennej "cars" nowego obiektu klasy ArrayList
 
         SangYong sangYong = new SangYong(100, 20, 10);
         cars.add(sangYong);

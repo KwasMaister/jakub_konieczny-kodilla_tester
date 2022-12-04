@@ -9,7 +9,7 @@ public class Student {
 
     public Student(String name) {
         this.name = name;
-        this.maths = new Grades();  //tutaj wywolujemy metode Grades z klasy Grades tak? Czyli ta z 7 linii
+        this.maths = new Grades();  //jak jest new to znaczy ze tworzymy obiekt.
         this.physics = new Grades();
         this.geography = new Grades();
         this.history = new Grades();

@@ -1,9 +1,9 @@
 import java.util.Random;
 public class RandomNumbers {
-    Random random = new Random();
+    Random random = new Random();   // obiekt
     public int min;
     public int max;
-    int maximum;
+    int maximum;  // no i tutaj dlaczego wlasnie nie ma np. "public int maximum"
 
     public void draw() {
         int sum = 0;
@@ -23,11 +23,11 @@ public class RandomNumbers {
             }
         }
     }
-    public int getMax() {
+    public int getMax() {  //konstruktor
         return this.max;
     }
 
-    public int getMin() {
+    public int getMin() { // konstruktor
         return this.min;
     }
 
@@ -39,3 +39,8 @@ public class RandomNumbers {
         System.out.println("Max: " + random.getMax());
     }
 }
+
+/*
+Przy takim czyms to lepiej to rozbic na osobne klasy ? Czy robic to w jednej klasie
+Osobna klasa na main i osobna na reszte programu ?
+ */

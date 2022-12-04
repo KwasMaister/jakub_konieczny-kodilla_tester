@@ -45,7 +45,7 @@ public class GradesTestSuite {
     Chodzi mi o to ze poszczegolne testy nie dziedzicza jakis wartosci zmiennych czy tam zawartosci tablicy
      */
     @Test
-    public void shouldReturnAverageEqualsZeroIsArrayIsEmpty() { //tutaj wykonujemy test jak dla getaverage nie przekazujemy zadnych wartosci ?
+    public void shouldReturnAverageEqualsZeroIsArrayIsEmpty() {
         Grades grades = new Grades();
         assertEquals(0, grades.getAverage(), 0.0001);
     }
@@ -73,4 +73,9 @@ public class GradesTestSuite {
         assertEquals(0, mathsAverage, 0.01);
         assertEquals(3, physicsAverage, 0.01);
     }
+
+    /*
+    Powyzej wykonujemy test zwiazany z klasa Student
+    Czyli w testach smialo mozna wykonywac testy nie tylko dla tej klasy do ktorej ona nalezy ?
+     */
 }

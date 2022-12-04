@@ -31,3 +31,10 @@ public class Application {
         zosia.usersCheck();
     }
 }
+ /*
+ Jak lepiej ?
+ Osobna klasa main
+ Osobna klasa Users ?
+
+ Czy po prostu w jednej klasie jak tutaj ?
+  */

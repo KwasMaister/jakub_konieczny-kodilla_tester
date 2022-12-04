@@ -7,9 +7,11 @@ import com.kodilla.collections.interfaces.homework.SangYong;
 
 public class CarUtils {
     public static void describeCar (Car car){
-        System.out.println("-----------------------------");
-        System.out.println("Marka samochodu: " + getNameCar(car));
-        System.out.println("Samochod porusza sie z predkoscia: " + car.getSpeed());
+
+            System.out.println("-----------------------------");
+            System.out.println("Marka samochodu: " + getNameCar(car));
+            System.out.println("Samochod porusza sie z predkoscia: " + car.getSpeed());
+
     }
     public static void doIncrease(Car car){
         car.increaseSpeed();
