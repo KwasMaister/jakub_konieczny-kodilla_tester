@@ -10,19 +10,49 @@ import static org.junit.jupiter.api.Assertions.*;
 class UsersManagerTest {
 
 
+    @Test
+    public void testFilterChemistGroupUsernames () {
+        List<String> user = UsersManager.filterChemistGroupUsernames();
+        List<String> expectedList = new ArrayList<>();
+        expectedList.add("Walter White");
+        expectedList.add("Gale Boetticher");
 
-
+        assertEquals(expectedList, user);
+    }
 
     @Test
-    public void firstStream (){
+    public void firstTestfilterUsersByAge () {
+        List<String> user = UsersManager.filterUsersByAge(49);
+        List<String> expectedList = new ArrayList<>();
+        expectedList.add("Walter White");
+        expectedList.add("Mike Ehrmantraut");
 
-        List<User> users = new ArrayList<>();
-        users.add(new User("Walter White", 50, 7, "Chemists"));
-        users.add(new User("Gale Boetticher", 44, 2, "Chemists"));
-        for (User nameUsers : users){
-          //  nameUsers = User.
-        }
+        assertEquals(expectedList, user);
+    }
 
+    @Test
+    public void secondTestfilterUsersByAge () {
+        List<String> user = UsersManager.filterUsersByAge(101);
+        List<String> expectedList = new ArrayList<>();
+
+        assertEquals(expectedList, user);
+    }
+
+    @Test
+    public void firstTestfilterUsersByNumberOfPost () {
+        List<String> user = UsersManager.filterUsersByNumberOfPost(116);
+        List<String> expectedList = new ArrayList<>();
+        expectedList.add("Tuco Salamanca");
+
+        assertEquals(expectedList, user);
+    }
+
+    @Test
+    public void secondTestfilterUsersByNumberOfPost () {
+        List<String> user = UsersManager.filterUsersByNumberOfPost(1162);
+        List<String> expectedList = new ArrayList<>();
+
+        assertEquals(expectedList, user);
     }
 
 
