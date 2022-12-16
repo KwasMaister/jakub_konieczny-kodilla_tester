@@ -13,35 +13,19 @@ public class ApplicationTest {
 
     @Test
     public void testGdyNauczycielJestNullem () {
-        List<Student> students = new ArrayList<>();
-        Teacher teacher1 = new Teacher(null);
-        students.add(new Student("Ada", null));
+        Student student = new Student("Kuba", null);
+        Application.getNameTeacher(student);
 
+        assertEquals("<undefined>", Application.getNameTeacher(student));
 
-        for (Student student : students) {
-            Optional<Teacher> optionalTeacher = Optional.ofNullable(student.getTeacher());
-
-            if (optionalTeacher.isEmpty())
-            teacher1 = optionalTeacher.orElse(new Teacher("<undefined>"));
-        }
-
-        assertEquals("<undefined>", teacher1.getName());
     }
 
     @Test
     public void testGdyNauczycielNieJestNullem () {
-        List<Student> students = new ArrayList<>();
-        Teacher teacher1 = new Teacher(null);
-        students.add(new Student("Ada", new Teacher("Andrzej")));
+        Teacher teacher = new Teacher("Pawel");
+        Student student = new Student("Adam", teacher);
+        Application.getNameTeacher(student);
 
-
-        for (Student student : students) {
-            Optional<Teacher> optionalTeacher = Optional.ofNullable(student.getTeacher());
-
-            if (!optionalTeacher.isEmpty())
-                teacher1 = optionalTeacher.orElse(new Teacher("<undefined>"));
-        }
-
-        assertEquals("Andrzej", teacher1.getName());
+        assertEquals("Pawel", Application.getNameTeacher(student));
     }
-    }
+}

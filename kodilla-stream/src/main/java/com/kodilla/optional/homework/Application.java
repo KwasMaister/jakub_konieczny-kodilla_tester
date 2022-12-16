@@ -10,13 +10,21 @@ public class Application {
         students.add(new Student("Kuba", new Teacher("Czeslaw")));
         students.add(new Student("Lukasz", new Teacher("Adam")));
         students.add(new Student("Pawel", new Teacher("Adam")));
-        students.add(new Student("Ada", null)); // dlaczego po prostu null a nie "new Teacher (null)"
+        students.add(new Student("Ada", null));
         students.add(new Student("Ania", null));
 
         for (Student student : students) {
-            Optional<Teacher> optionalTeacher = Optional.ofNullable(student.getTeacher());
-            Teacher teacher = optionalTeacher.orElse(new Teacher("<undefined>"));
-            System.out.println("Student: " + student.getName() + ", Teacher: " + teacher.getName());
+            String teacherName = getNameTeacher(student);
+            System.out.println("Student: " + student.getName() + ", Teacher: " + teacherName);
         }
     }
+
+    public static String getNameTeacher (Student student){
+
+        Optional<Teacher> optionalTeacher = Optional.ofNullable(student.getTeacher());
+        String teacherName = optionalTeacher.orElse(new Teacher("<undefined>")).getName();
+
+        return teacherName;
+    }
+
 }
