@@ -22,5 +22,16 @@ class StringValidatorTestSuite {
     public void shouldReturnTrueIfStringIsNull(String text) {
         assertTrue(validator.isBlank(text));
     }
+    @ParameterizedTest
+    @NullAndEmptySource
+    public void shouldReturnTrueIfStringIsEmptyy(String text) {
+        assertTrue(validator.isBlank(text));
+    }
+
+    @ParameterizedTest
+    @NullSource
+    public void shouldReturnTrueIfStringIsNulllll(String text) {
+        assertTrue(validator.isBlank(text));
+    }
 
 }
