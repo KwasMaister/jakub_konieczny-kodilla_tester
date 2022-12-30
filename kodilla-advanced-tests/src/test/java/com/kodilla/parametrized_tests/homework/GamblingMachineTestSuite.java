@@ -3,6 +3,7 @@ package com.kodilla.parametrized_tests.homework;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -20,7 +21,7 @@ class GamblingMachineTestSuite {
     @CsvFileSource(resources = "/correctNumbers.csv")
     public void correctNumbers (String expected) throws InvalidNumbersException {
         String[] numbers = expected.split(","); // z csv pobieram do tablicy "numbers" - String oddzielone ","
-        Set<String> setNumbers = new HashSet<>(Arrays.asList(numbers)); // przypisanie do SET'a zawartosci tablicy nuymbers (Arrays.asList)
+        Set<String> setNumbers = new HashSet<>(Arrays.asList(numbers)); // przypisanie do SET'a zawartosci tablicy numbers (Arrays.asList)
         Set<Integer> correctNumbers = setNumbers
                 .stream()
                 .map(Integer::parseInt)
@@ -31,7 +32,7 @@ class GamblingMachineTestSuite {
     }
 
     /*
-    Test, czy wtedy weznie wszystkie cyfry z csv ale niestety nadal nie
+    Inny sposób
      */
     @ParameterizedTest
     @CsvFileSource(resources = "/correctNumbers.csv")
@@ -55,6 +56,13 @@ class GamblingMachineTestSuite {
                 .stream()
                 .map(Integer::parseInt).collect(Collectors.toSet());
         assertThrows(InvalidNumbersException.class, () -> gamblingMachine.howManyWins(collect));
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {5})
+    public void notEnoughNumbersForExampleOnlyOne (int a) throws InvalidNumbersException {
+        Set<Integer> numbers = new HashSet<>(a);
+        assertThrows(InvalidNumbersException.class, () -> gamblingMachine.howManyWins(numbers));
     }
 
 }
