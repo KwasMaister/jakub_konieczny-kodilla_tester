@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 
     autowired --> wstrzykiwanie do pola
     Adnotacja @Autowired mówi: "znajdź beana o typie określonym poniżej i przypisz go do wskazanej zmiennej"
+
+    to drugie autowired --> to jest wstrzykiwanie za pomocą settera
      */
 
 @Component
@@ -24,5 +26,10 @@ public class SimpleApplication {
 
     private boolean checkReceiver(String receiver) {
         return receiver != null && !receiver.isEmpty();
+    }
+
+    @Autowired
+    public void setMessageService(SkypeMessageService messageService) {
+        this.messageService = messageService;
     }
 }
